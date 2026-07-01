@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIFA World Cup 2026 Live Hub</title>
+    <link rel="preconnect" href="https://site.api.espn.com">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="#top">WC26 Hub</a>
+        <div class="nav-links">
+          <a href="#live">Live</a>
+          <a href="#fixtures">Fixtures</a>
+          <a href="#results">Results</a>
+          <a href="#stats">Stats</a>
+          <a href="#links">Links</a>
+        </div>
+      </nav>
+      <section class="hero-copy">
+        <p class="eyebrow">Canada, Mexico & USA · 11 Jun - 19 Jul 2026</p>
+        <h1>FIFA World Cup 2026 match centre</h1>
+        <p>
+          Fixtures, results, team form, tournament stats, live score panels, venues,
+          and official match links in one fast dashboard.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#live">View live scores</a>
+          <a class="button" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noreferrer">Official FIFA site</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="status-strip" aria-label="Tournament summary">
+        <article>
+          <span class="metric" id="metric-matches">104</span>
+          <span>scheduled matches</span>
+        </article>
+        <article>
+          <span class="metric">48</span>
+          <span>qualified teams</span>
+        </article>
+        <article>
+          <span class="metric">16</span>
+          <span>host cities</span>
+        </article>
+        <article>
+          <span class="metric" id="metric-goals">Live</span>
+          <span>goals tracker</span>
+        </article>
+      </section>
+
+      <section class="panel" id="live">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Live score</p>
+            <h2>Today and next matches</h2>
+          </div>
+          <div class="tools">
+            <span class="source-pill" id="data-status">Loading live data</span>
+            <button class="icon-button" id="refresh" title="Refresh live scores" aria-label="Refresh live scores">↻</button>
+          </div>
+        </div>
+        <div class="live-grid" id="live-grid"></div>
+      </section>
+
+      <section class="split">
+        <div class="panel" id="fixtures">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow">Schedule</p>
+              <h2>Fixtures</h2>
+            </div>
+            <select id="stage-filter" aria-label="Filter fixtures by stage">
+              <option value="all">All stages</option>
+              <option value="group">Group</option>
+              <option value="round-of-32">Round of 32</option>
+              <option value="rd-of-16">Round of 16</option>
+              <option value="quarterfinals">Quarterfinals</option>
+              <option value="semifinals">Semifinals</option>
+              <option value="finals">Finals</option>
+            </select>
+          </div>
+          <div class="match-list" id="fixtures-list"></div>
+        </div>
+
+        <div class="panel" id="results">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow">Completed</p>
+              <h2>Results</h2>
+            </div>
+            <input id="team-search" type="search" placeholder="Search team" aria-label="Search team">
+          </div>
+          <div class="match-list" id="results-list"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="stats">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Tournament stats</p>
+            <h2>Numbers that move with the matches</h2>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><span id="stat-completed">0</span><p>matches completed</p></article>
+          <article class="stat-card"><span id="stat-upcoming">0</span><p>upcoming matches</p></article>
+          <article class="stat-card"><span id="stat-total-goals">0</span><p>goals recorded</p></article>
+          <article class="stat-card"><span id="stat-avg-goals">0.00</span><p>goals per completed match</p></article>
+        </div>
+        <div class="leaderboards">
+          <div>
+            <h3>Top scoring teams</h3>
+            <ol id="team-leaders"></ol>
+          </div>
+          <div>
+            <h3>Venues in use</h3>
+            <ol id="venue-list"></ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="teams">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Teams and venues</p>
+            <h2>Participants visible in loaded fixtures</h2>
+          </div>
+        </div>
+        <div class="team-cloud" id="team-cloud"></div>
+      </section>
+
+      <section class="panel links-panel" id="links">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Live links</p>
+            <h2>Official and score links</h2>
+          </div>
+        </div>
+        <div class="link-grid">
+          <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noreferrer">
+            <strong>FIFA World Cup 2026</strong>
+            <span>Official tournament hub, news, fixtures, ticketing and venue information.</span>
+          </a>
+          <a href="https://www.espn.com/soccer/scoreboard/_/league/fifa.world" target="_blank" rel="noreferrer">
+            <strong>ESPN live scoreboard</strong>
+            <span>Live scores, Gamecast, lineups, stats and match commentary.</span>
+          </a>
+          <a href="https://www.foxsports.com/soccer/fifa-world-cup" target="_blank" rel="noreferrer">
+            <strong>US live TV / stream info</strong>
+            <span>FOX World Cup coverage and broadcast details.</span>
+          </a>
+          <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets" target="_blank" rel="noreferrer">
+            <strong>Official tickets</strong>
+            <span>FIFA ticketing and hospitality information.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Data loads from ESPN's public scoreboard endpoint and links out to official FIFA pages. Last refreshed: <span id="last-refresh">not yet</span>.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
